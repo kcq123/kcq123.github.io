@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>hexo部署报错 spawn failed</title>
+      <link href="/2022/11/15/hexo%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99-spawn-failed/"/>
+      <url>/2022/11/15/hexo%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99-spawn-failed/</url>
+      
+        <content type="html"><![CDATA[<p>问题出现:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">err: Error: Spawn failed</span><br><span class="line">      at ChildProcess.&lt;anonymous&gt; (D:\workplace\blog\node_modules\hexo-util\lib\spawn.js:51:21)</span><br><span class="line">      at ChildProcess.emit (events.js:376:20)</span><br><span class="line">      at ChildProcess.cp.emit (D:\workplace\blog\node_modules\cross-spawn\lib\enoent.js:34:29)</span><br><span class="line">      at Process.ChildProcess._handle.onexit (internal/child_process.js:277:12) &#123;</span><br><span class="line">    code: 128</span><br></pre></td></tr></table></figure><p>常规解决办法：<br>解决方法一：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 第一个就是你的邮箱，第二个就是你的用户名</span><br><span class="line">git config --global user.email &quot;2673065011@qq.com&quot;</span><br><span class="line">git config --global user.name &quot;210173313&quot;</span><br></pre></td></tr></table></figure><p>解决方法二：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 删除.deploy_git文件夹,输入：</span><br><span class="line">git config --global core.autocrlf false</span><br><span class="line"># 然后，依次执行：</span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure><p>解决方法三：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 打开_config.yml配置文件，修改以下内容</span><br><span class="line"></span><br><span class="line">deploy:</span><br><span class="line">type: &#x27;git&#x27;</span><br><span class="line">repo: https://github.com/yourname/yourname.github.io.git</span><br><span class="line">branch: master</span><br><span class="line"># 其中的repo修改为</span><br><span class="line">repo: git@github.com:yourname/yourname.github.io.git</span><br></pre></td></tr></table></figure><p>试了一下以上常规方法，并没有解决问题，最后的解决办法是重新创建git仓库并连接，然后成功部署。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>微服务调用的数据库错误导致项目报错</title>
       <link href="/2022/11/12/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E8%B0%83%E7%94%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%99%E8%AF%AF%E5%AF%BC%E8%87%B4%E9%A1%B9%E7%9B%AE%E6%8A%A5%E9%94%99/"/>
       <url>/2022/11/12/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E8%B0%83%E7%94%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%99%E8%AF%AF%E5%AF%BC%E8%87%B4%E9%A1%B9%E7%9B%AE%E6%8A%A5%E9%94%99/</url>
