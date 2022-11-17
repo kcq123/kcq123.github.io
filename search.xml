@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>JavaScript的三种弹出框：警告框、确认框、提示框</title>
+      <link href="/2022/11/16/JavaScript%E7%9A%84%E4%B8%89%E7%A7%8D%E5%BC%B9%E5%87%BA%E6%A1%86%EF%BC%9A%E8%AD%A6%E5%91%8A%E6%A1%86%E3%80%81%E7%A1%AE%E8%AE%A4%E6%A1%86%E3%80%81%E6%8F%90%E7%A4%BA%E6%A1%86/"/>
+      <url>/2022/11/16/JavaScript%E7%9A%84%E4%B8%89%E7%A7%8D%E5%BC%B9%E5%87%BA%E6%A1%86%EF%BC%9A%E8%AD%A6%E5%91%8A%E6%A1%86%E3%80%81%E7%A1%AE%E8%AE%A4%E6%A1%86%E3%80%81%E6%8F%90%E7%A4%BA%E6%A1%86/</url>
+      
+        <content type="html"><![CDATA[<p>JavaScript的三种不同弹出框：警告框、确认框、提示框</p><p>1、警告框：window.alert()</p><p>当我们需要用户看到一些信息时，可以使用警告框，用户必须点击警告框上的【确定】按钮，才能继续操作。</p><p>函数参数为弹出框显示的内容。</p><img src="/2022/11/16/JavaScript%E7%9A%84%E4%B8%89%E7%A7%8D%E5%BC%B9%E5%87%BA%E6%A1%86%EF%BC%9A%E8%AD%A6%E5%91%8A%E6%A1%86%E3%80%81%E7%A1%AE%E8%AE%A4%E6%A1%86%E3%80%81%E6%8F%90%E7%A4%BA%E6%A1%86/1.png" class title="This is an test image"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;</span><br><span class="line">&lt;title&gt;JavaScript的弹出框&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;input type=&quot;button&quot; value=&quot;弹出警告框&quot; onclick=&quot;popup()&quot;/&gt;</span><br><span class="line">  &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    function popup()&#123;</span><br><span class="line">      alert(&quot;点击[确定]以继续操作&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure><p>2、确认框：window.confirm()</p><p>确认框可以让用户做出一个选择，以确认接下来是否进行某种行为。</p><p>函数参数为弹出框显示的内容。</p><p>点击[确定]返回true，点击[取消]返回false。</p><img src="/2022/11/16/JavaScript%E7%9A%84%E4%B8%89%E7%A7%8D%E5%BC%B9%E5%87%BA%E6%A1%86%EF%BC%9A%E8%AD%A6%E5%91%8A%E6%A1%86%E3%80%81%E7%A1%AE%E8%AE%A4%E6%A1%86%E3%80%81%E6%8F%90%E7%A4%BA%E6%A1%86/2.png" class title="This is an test image"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;</span><br><span class="line">&lt;title&gt;JavaScript的弹出框&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    var v = confirm(&quot;是否弹出确认框&quot;);</span><br><span class="line">    //点击[确定]（返回true）则弹出一个确认框</span><br><span class="line">    if(v)&#123;</span><br><span class="line">      popup();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //弹出确认框</span><br><span class="line">    function popup()&#123;</span><br><span class="line">      alert(&quot;点击[确定]以继续操作&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure><p>3、提示框：window.prompt()</p><p>提示框让用户在进行某种操作前可以输入信息。</p><p>例如跳转到其他网页前弹出一个提示框，让用户输入要跳转的网页地址。</p><p>该函数有两个形参，形参1为弹出框显示的内容，形参2为默认的输入值。</p><p>该框点击[确定]返回输入值，点击[取消]返回null。</p><img src="/2022/11/16/JavaScript%E7%9A%84%E4%B8%89%E7%A7%8D%E5%BC%B9%E5%87%BA%E6%A1%86%EF%BC%9A%E8%AD%A6%E5%91%8A%E6%A1%86%E3%80%81%E7%A1%AE%E8%AE%A4%E6%A1%86%E3%80%81%E6%8F%90%E7%A4%BA%E6%A1%86/3.png" class title="This is an test image"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;</span><br><span class="line">&lt;title&gt;JavaScript的弹出框&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    var v = prompt(&quot;输入你要跳转的网页地址&quot;,&quot;https://www.taobao.com&quot;);</span><br><span class="line">    if(v)&#123;</span><br><span class="line">      open(v);</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure><p>原文链接：<a href="https://blog.csdn.net/Dawson_Ho/article/details/109522194">https://blog.csdn.net/Dawson_Ho/article/details/109522194</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 小功能 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 弹出框 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hexo部署报错 spawn failed</title>
       <link href="/2022/11/15/hexo%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99-spawn-failed/"/>
       <url>/2022/11/15/hexo%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99-spawn-failed/</url>
@@ -93,6 +120,12 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> bug </tag>
+            
+        </tags>
       
     </entry>
     
