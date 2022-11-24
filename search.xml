@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Uncaught (in promise): removeView was not found</title>
+      <link href="/2022/11/24/Uncaught-in-promise-removeView-was-not-found/"/>
+      <url>/2022/11/24/Uncaught-in-promise-removeView-was-not-found/</url>
+      
+        <content type="html"><![CDATA[<h2 id="‘Uncaught-in-promise-removeView-was-not-found’"><a href="#‘Uncaught-in-promise-removeView-was-not-found’" class="headerlink" title="‘Uncaught (in promise): removeView was not found’"></a>‘Uncaught (in promise): removeView was not found’</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><ul><li>离子 - 错误:未捕获(承诺):未找到 removeView</li><li>这个问题是在退料功能时加入一个弹窗时，然后在弹窗功能结束消失的时候报了一个这样的错误。<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">core.js:1449 ERROR Error: Uncaught (in promise): removeView was not found</span><br><span class="line">    at c (polyfills.js:3:19752)</span><br><span class="line">    at c (polyfills.js:3:19461)</span><br><span class="line">    at polyfills.js:3:20233</span><br><span class="line">    at t.invokeTask (polyfills.js:3:15660)</span><br><span class="line">    at Object.onInvokeTask (core.js:4751:1)</span><br><span class="line">    at t.invokeTask (polyfills.js:3:15581)</span><br><span class="line">    at r.runTask (polyfills.js:3:10834)</span><br><span class="line">    at o (polyfills.js:3:7894)</span><br></pre></td></tr></table></figure></li></ul><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><ul><li>在网上搜到的原因可能是因为在调用this.loading.dismiss()时可能会关闭相同的加载两次。<img src="/2022/11/24/Uncaught-in-promise-removeView-was-not-found/1.png" class title="This is an test image"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">showRadio() &#123;</span><br><span class="line">    let alert = this.alertCtrl.create();</span><br><span class="line">    alert.setTitle(&#x27;目标仓库&#x27;);</span><br><span class="line">    for (let i = 0; i &lt; this.typeData.length; i++) &#123;</span><br><span class="line">        alert.addInput(&#123;</span><br><span class="line">            type: &quot;radio&quot;,</span><br><span class="line">            label: this.typeData[i].name,</span><br><span class="line">            value: this.typeData[i].id,</span><br><span class="line">            handler: data =&gt; &#123;</span><br><span class="line">                this.querys.cangkuid = data.value;</span><br><span class="line">                this.targetstorehouse = data.label;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    alert.addButton(&quot;取消&quot;);</span><br><span class="line">    alert.addButton(&#123;</span><br><span class="line">        text: &#x27;确认&#x27;,</span><br><span class="line">        handler: data =&gt; &#123;</span><br><span class="line">            this.confirm();</span><br><span class="line">            alert.dismiss();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    alert.present();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>然后把方法中点击确定之后alert.dismiss()这个方法去掉，然后再次运行之后问题解决。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日常bug </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>对接sap导入嵌套表再嵌套表问题</title>
       <link href="/2022/11/22/%E5%AF%B9%E6%8E%A5sap%E5%AF%BC%E5%85%A5%E5%B5%8C%E5%A5%97%E8%A1%A8%E5%86%8D%E5%B5%8C%E5%A5%97%E8%A1%A8%E9%97%AE%E9%A2%98/"/>
       <url>/2022/11/22/%E5%AF%B9%E6%8E%A5sap%E5%AF%BC%E5%85%A5%E5%B5%8C%E5%A5%97%E8%A1%A8%E5%86%8D%E5%B5%8C%E5%A5%97%E8%A1%A8%E9%97%AE%E9%A2%98/</url>
