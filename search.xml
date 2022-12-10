@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>PDF模板</title>
+      <link href="/2022/12/10/PDF%E6%A8%A1%E6%9D%BF/"/>
+      <url>/2022/12/10/PDF%E6%A8%A1%E6%9D%BF/</url>
+      
+        <content type="html"><![CDATA[<h1 id="PDF模板的画法"><a href="#PDF模板的画法" class="headerlink" title="PDF模板的画法"></a>PDF模板的画法</h1><ul><li>今天的任务是画一个pdf模板，之前没有接触过这个东西，然后对照着之前的模板尝试了几次，其中遇见了很多问题<h3 id="问题一："><a href="#问题一：" class="headerlink" title="问题一："></a>问题一：</h3></li><li>一开始，并不是很清楚colspan 和 rowspan 这两个属性，以为和ionic中一样，一行就只有十二份，导致我画的表格一直对应不起来，后来了解到</li><li>colspan=”（合并列的数量）”(但是后面的内容会被挤到新的一列）</li><li>rowspan=”（合并行的数量）”（但是被占用行的内容会被挤到新的列）</li><li>就类似于我们熟悉的合并单元格，让这个单元格占几行或者占几列<h3 id="问题二："><a href="#问题二：" class="headerlink" title="问题二："></a>问题二：</h3></li><li>清楚了colspan 和 rowspan 的用法之后，慢慢的画出来一个基本的表格，<img src="/2022/12/10/PDF%E6%A8%A1%E6%9D%BF/1.png" class title="This is an test image"></li><li>然后因为其中有些行是不固定的，是根据数据量来确定的，因此就加入了循环，然后有的单元格所占有的列数也是根据数据的多少来动态变化的，因此想到<br>在传数据的时候动态的计算出数据的多少，用一个变量来表示所占列数。<br>最终效果为：<img src="/2022/12/10/PDF%E6%A8%A1%E6%9D%BF/2.png" class title="This is an test image"><h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2></li><li>1.首先我们需要创建一个新的html文件建立好基本框架。</li><li>2.在body标签内输入一个table标签表示这是一个表格。</li><li>3.在table标签内建立一行tr以及表头th并输入表头内容。</li><li>4.接着再建立新的一行，并在tr标签里添加单元格td.</li><li>5.如需多行数据则只需将单元格多复制几份即可。</li><li>6.最后在table标签添加边框，一个简单的表格就完成了。</li><li>7.还可以根据实际需求将单元格合并，如果需要将多个列合并只需要在td标签内添加colspan=”（合并列的数量）”(但是后面的内容会被挤到新的一列）<br>  如果要合并多个行则只需要在td标签内添加rowspan=”（合并行的数量）”（但是被占用行的内容会被挤到新的列</li><li>8.如果觉得单元格之间的距离影响美观，还可以用cellspacing=”(数字)”来设置单元格之间的距离，输入0则是没有距离。</li><li>9.如果觉得表格边框颜色太单调想鲜艳一点，可以用bordercolor属性设置边框颜色。</li><li>10.除了上面这些样式，还可以设置表格的宽高、插入背景图片、字体颜色、文字居中等。（设置多个样式建议在style标签内进行设置）</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 小功能 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> html </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>npm启动报错——端口被占用</title>
       <link href="/2022/12/01/npm%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99%E2%80%94%E2%80%94%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8/"/>
       <url>/2022/12/01/npm%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99%E2%80%94%E2%80%94%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8/</url>
